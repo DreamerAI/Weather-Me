@@ -1,0 +1,47 @@
+@import "../../../../styles/variables.scss";
+
+.this__day__info {
+    position: relative;
+    padding: 44px 32px;
+    max-width: 750px;
+    width: 100%;
+
+    box-shadow: $light-box-shadow2;
+    border-radius: $border-radiusBig;
+    background: $light-background;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .indicator__icon {
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+
+        margin-right: 20px;
+        justify-content: center;
+        background: $light-background;
+        border-radius: 50%;
+        box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    }
+
+    .indicator__name {
+        width: 100px;
+        font-size: $font-size-Regular;
+        color: $light-font-secondary;
+    }
+
+    .indicator__value {
+        font-size: $font-size-Regular;
+        color: $light-font-primary;
+    }
+}

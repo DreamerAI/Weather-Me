@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+}
+
+.title {
+    margin-left: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #333333;
+}
+
+.select {
+    margin-left: 12px;
+}

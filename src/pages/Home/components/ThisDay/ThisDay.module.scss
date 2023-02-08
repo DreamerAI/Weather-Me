@@ -1,0 +1,48 @@
+@import "../../../../styles/variables.scss";
+
+.this__day {
+    width: 400px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: $light-background;
+    box-shadow: $light-box-shadow2;
+    border-radius: $border-radiusBig;
+}
+
+.this__day__temperature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .this__day__degree {
+        color: $light-font-accent;
+        margin: 0;
+        font-size: 6rem;
+    }
+
+    .this__day__icon {
+        display: flex;
+        margin-right: 20px;
+    }
+}
+
+.this__day__today {
+    margin: 0;
+    margin: 4px 0;
+
+    font-size: 2.5rem;
+    color: $light-font-primary;
+}
+
+.this__day__date {
+    color: $light-font-secondary;
+    font-size: 1.5rem;
+
+    span {
+        color: $light-font-accent;
+    }
+}
