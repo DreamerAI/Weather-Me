@@ -1,0 +1,137 @@
+@import "../../../../styles/variables.scss";
+
+.days__container {
+    background: var(#{--body-background-default});
+    border-radius: $border-radiusBig;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+.days {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 20px 0;
+
+    background: var(#{--body-background-default});
+    border-radius: 0 0 $border-radiusBig $border-radiusBig;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: var(#{--box-shadow-default});
+    border-radius: $border-radiusSmall;
+
+    padding: 20px;
+    width: 140px;
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background: var(#{--accent-background-default});
+    }
+
+    .card__header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+
+        &::after {
+            content: "";
+            margin-top: 8px;
+            width: 80%;
+            height: 2px;
+            background-color: var(#{--hr-color-default});
+        }
+        .day {
+            font-size: $font-size-RegularH3;
+            padding: 0;
+            color: var(#{--font-primary-default});
+        }
+
+        .day__info {
+            padding: 0;
+            font-size: $font-size-Regular;
+            color: var(#{--font-secondary-default});
+        }
+    }
+}
+
+.card__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    margin-top: 15px;
+
+    .info_degree {
+        margin-top: 4px;
+
+        .day__temp_day {
+            font-size: $font-size-RegularH2;
+            color: var(#{--font-primary-default});
+        }
+
+        .day__temp_night {
+            font-size: $font-size-RegularH3;
+            color: var(#{--font-secondary-default});
+        }
+    }
+}
+
+// TABS Styles
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+
+    .tabs__wrapper {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.tab,
+.cancel {
+    background: var(#{--body-background-default});
+    box-shadow: var(#{--box-shadow-default});
+    border-radius: $border-radiusSmall;
+
+    font-size: $font-size-RegularH3;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.tab {
+    color: var(#{--font-accent-default});
+
+    &:active {
+        color: #fff;
+        background: var(#{--font-accent-default});
+    }
+
+    &:hover {
+        color: #fff;
+        background: var(#{--font-accent-default});
+    }
+}
+
+.cancel {
+    color: var(#{--font-cancel-default});
+    &:active {
+        color: #fff;
+        background: var(#{--font-cancel-default});
+    }
+    &:hover {
+        color: #fff;
+        background: var(#{--font-cancel-default});
+    }
+}

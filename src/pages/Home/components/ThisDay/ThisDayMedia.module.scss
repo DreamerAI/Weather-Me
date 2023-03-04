@@ -1,0 +1,7 @@
+@import "../../../../styles/variables.scss";
+
+@media screen and (min-device-width: $mobile-width) {
+    .this__day {
+        flex-direction: row;
+    }
+}

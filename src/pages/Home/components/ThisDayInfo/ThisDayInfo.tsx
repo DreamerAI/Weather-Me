@@ -1,9 +1,10 @@
 import React from 'react'
+import { Weather } from '../../../../store/types/types'
 import s from './ThisDayInfo.module.scss'
 import ThisDayItem from './ThisDayItem'
 
-interface Props {
-
+interface weatherInfoProps {
+    weatherInfo: Weather
 }
 
 export interface Item {
@@ -12,27 +13,30 @@ export interface Item {
     value: string,
 }
 
-const ThisDayInfo = (props: Props) => {
+const ThisDayInfo = ({ weatherInfo }: weatherInfoProps) => {
+
+    const temperature = Math.round(weatherInfo.main.temp)
+    const feelTemperaturee = Math.round(weatherInfo.main.feels_like)
 
     const items = [{
         icon_id: 'temp',
         name: 'Температура',
-        value: '20° - ощущается как 17°',
+        value: `${temperature}° - ощущается как ${feelTemperaturee}°`,
 
     }, {
         icon_id: 'pressure',
         name: 'Давление ',
-        value: '765 мм ртутного столба - нормальное',
+        value: `${weatherInfo.main.pressure} мм ртутного столба - нормальное`,
 
     }, {
         icon_id: 'rainfall',
-        name: 'Осадки',
-        value: 'Без осадков',
+        name: 'Влажность',
+        value: `${weatherInfo.main.humidity} %`,
 
     }, {
         icon_id: 'wind',
         name: 'Ветер',
-        value: '3 м/с юго-запад - легкий ветер',
+        value: `${weatherInfo.wind.speed} м/с юго-запад - легкий ветер`,
 
     },
     ]

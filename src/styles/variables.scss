@@ -1,13 +1,79 @@
 $light-background: #fff;
-$light-box-shadow: 2px 5px 15px 10px rgb(224, 224, 224, 0.5);
-$light-box-shadow2: rgba(0, 0, 0, 0.24) 0px 1px 4px;
+$light-background-accent: rgb(119, 176, 255, 0.3);
 
-$border-radiusBig: 20px;
-
-$border-radiusSmall: 10px;
+$light-box-shadow: 1px 1px 2px 2px #e6e7e8;
+$light-box-shadowIcon: 0px 0px 1px 1px rgba(71, 147, 255, 0.2);
 
 $light-font-primary: #333333;
 $light-font-secondary: #939cb0;
 $light-font-accent: #77b0ff;
+$light-font-cancel: #eb5757;
 
+$light-hr-color: rgb(119, 176, 255, 0.2);
+// Dark Theme
+
+$dark-background: #131e2a;
+$dark-background-accent: #2f4765;
+
+$dark-box-shadow: 1px 1px 1px 3px #284465;
+$dark-box-shadowIcon: 0px 0px 1px 1px #0171c2;
+
+$dark-font-primary: #77b0ff;
+$dark-font-secondary: #5b728c;
+$dark-font-accent: #0171c2;
+$dark-font-cancel: #eb5757;
+
+$dark-hr-color: rgba(119, 176, 255, 0.2);
+
+// Static variables
 $font-size-Regular: 0.875rem;
+$font-size-RegularH3: 1.125rem;
+$font-size-RegularH2: 1.5rem;
+
+$border-radiusBig: 20px;
+$border-radiusSmall: 10px;
+
+$mobile-width: 640px;
+:root {
+    --body-background-light: #{$light-background};
+    --body-background-dark: #{$dark-background};
+    --body-background-default: var(#{--body-background-light});
+
+    --accent-background-light: #{$light-background-accent};
+    --accent-background-dark: #{$dark-background-accent};
+    --accent-background-default: var(#{--accent-background-light});
+
+    --box-shadow-light: #{$light-box-shadow};
+    --box-shadow-dark: #{$dark-box-shadow};
+    --box-shadow-default: var(#{--box-shadow-light});
+
+    --box-shadowIcon-light: #{$light-box-shadowIcon};
+    --box-shadowIcon-dark: #{$dark-box-shadowIcon};
+    --box-shadowIcon-default: var(#{--box-shadowIcon-light});
+
+    //light font
+
+    --font-primary-light: #{$light-font-primary};
+    --font-secondary-light: #{$light-font-secondary};
+    --font-accent-light: #{$light-font-accent};
+    --font-cancel-light: #{$light-font-cancel};
+
+    //dark font
+
+    --font-primary-dark: #{$dark-font-primary};
+    --font-secondary-dark: #{$dark-font-secondary};
+    --font-accent-dark: #{$dark-font-accent};
+    --font-cancel-dark: #{$dark-font-cancel};
+
+    //default font
+
+    --font-primary-default: var(#{--font-primary-light});
+    --font-secondary-default: var(#{--font-secondary-light});
+    --font-accent-default: var(#{--font-accent-light});
+    --font-cancel-default: var(#{--font-cancel-light});
+
+    // hr color
+    --hr-color-light: #{$light-hr-color};
+    --hr-color-dark: #{$dark-hr-color};
+    --hr-color-default: var(#{--hr-color-light});
+}

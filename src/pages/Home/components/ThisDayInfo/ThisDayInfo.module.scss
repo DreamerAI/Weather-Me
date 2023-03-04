@@ -6,9 +6,9 @@
     max-width: 750px;
     width: 100%;
 
-    box-shadow: $light-box-shadow2;
+    box-shadow: var(#{--box-shadow-default});
     border-radius: $border-radiusBig;
-    background: $light-background;
+    background: var(#{--body-background-default});
 
     display: flex;
     flex-direction: column;
@@ -29,19 +29,19 @@
 
         margin-right: 20px;
         justify-content: center;
-        background: $light-background;
+        background: var(#{--body-background-default});
         border-radius: 50%;
-        box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+        box-shadow: var(#{--box-shadowIcon-default});
     }
 
     .indicator__name {
         width: 100px;
         font-size: $font-size-Regular;
-        color: $light-font-secondary;
+        color: var(#{--font-accent-default});
     }
 
     .indicator__value {
         font-size: $font-size-Regular;
-        color: $light-font-primary;
+        color: var(#{--font-primary-default});
     }
 }

@@ -8,8 +8,8 @@
     flex-direction: column;
     justify-content: space-between;
 
-    background: $light-background;
-    box-shadow: $light-box-shadow2;
+    background: var(#{--body-background-default});
+    box-shadow: var(#{--box-shadow-default});
     border-radius: $border-radiusBig;
 }
 
@@ -19,7 +19,7 @@
     justify-content: space-between;
 
     .this__day__degree {
-        color: $light-font-accent;
+        color: var(#{--font-accent-default});
         margin: 0;
         font-size: 6rem;
     }
@@ -27,6 +27,10 @@
     .this__day__icon {
         display: flex;
         margin-right: 20px;
+        svg {
+            width: 80px;
+            height: 80px;
+        }
     }
 }
 
@@ -35,14 +39,14 @@
     margin: 4px 0;
 
     font-size: 2.5rem;
-    color: $light-font-primary;
+    color: var(#{--font-primary-default});
 }
 
 .this__day__date {
-    color: $light-font-secondary;
+    color: var(#{--font-secondary-default});
     font-size: 1.5rem;
 
     span {
-        color: $light-font-accent;
+        color: var(#{--font-accent-default});
     }
 }
