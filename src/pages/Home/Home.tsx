@@ -11,8 +11,9 @@ import s from './Home.module.scss'
 export const Home = () => {
 
     const dispatch = useCustomDispatch();
-
     const { weather } = useCustomSelector(selectCurrentWeatherData)
+
+
 
     useEffect(() => {
         dispatch(fetchCurrentWeather('Москва'))

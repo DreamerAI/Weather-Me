@@ -26,17 +26,17 @@ const ThisDayInfo = ({ weatherInfo }: weatherInfoProps) => {
     }, {
         icon_id: 'pressure',
         name: 'Давление ',
-        value: `${weatherInfo.main.pressure} мм ртутного столба - нормальное`,
+        value: `${weatherInfo.main.pressure} мм ртутного столба`,
 
     }, {
         icon_id: 'rainfall',
         name: 'Влажность',
-        value: `${weatherInfo.main.humidity} %`,
+        value: `составляет ${weatherInfo.main.humidity} %`,
 
     }, {
         icon_id: 'wind',
         name: 'Ветер',
-        value: `${weatherInfo.wind.speed} м/с юго-запад - легкий ветер`,
+        value: `${weatherInfo.wind.speed} м/с юго-запад`,
 
     },
     ]

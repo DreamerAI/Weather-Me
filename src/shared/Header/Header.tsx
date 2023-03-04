@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 import { useTheme } from '../../hooks/useTheme'
 
@@ -13,6 +13,10 @@ type Props = {}
 export const Header = (props: Props) => {
 
     const theme = useTheme();
+    const [width, setWidth] = useState(window.innerWidth);
+
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
+
 
     const options = [
         { value: 'city-1', label: 'Москва' },
@@ -26,7 +30,7 @@ export const Header = (props: Props) => {
         control: (styles: any) => ({
             ...styles,
             backgroundColor: theme.theme === Theme.DARK ? '#172331' : 'rgb(119, 176, 255, 0.2)',
-            width: '194px',
+            width: width <= 640 ? '70vw' : '194px',
             height: '39px',
             border: 'none',
             borderRadius: '10px',
@@ -54,6 +58,7 @@ export const Header = (props: Props) => {
                 <div className={s.logo} ><GlobalSvgSelector id='header-logo' /></div>
                 <div className={s.title}>Weather ME</div>
             </div>
+            {width <= 640 ? <p className={s.select__label}> Выберите город</p> : null}
             <div className={s.wrapper}>
                 <div className={s.theme__icon} onClick={changeTheme}><GlobalSvgSelector id='change-theme' theme={theme.theme} /></div>
                 <Select defaultValue={options[0]} className={s.select} options={options} styles={colourStyles} />

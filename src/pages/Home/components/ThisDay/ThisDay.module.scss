@@ -50,3 +50,11 @@
         color: var(#{--font-accent-default});
     }
 }
+
+@media screen and (max-width: $mobile-width) {
+    .this__day {
+        width: 92%;
+        margin: auto;
+        margin-bottom: 12px;
+    }
+}

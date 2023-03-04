@@ -99,8 +99,7 @@
     }
 }
 
-.tab,
-.cancel {
+.tab {
     background: var(#{--body-background-default});
     box-shadow: var(#{--box-shadow-default});
     border-radius: $border-radiusSmall;
@@ -124,14 +123,13 @@
     }
 }
 
-.cancel {
-    color: var(#{--font-cancel-default});
-    &:active {
-        color: #fff;
-        background: var(#{--font-cancel-default});
+@media screen and (max-width: $mobile-width) {
+    .tabs {
+        justify-content: space-around;
     }
-    &:hover {
-        color: #fff;
-        background: var(#{--font-cancel-default});
+
+    .days {
+        justify-content: space-around;
+        gap: 12px;
     }
 }

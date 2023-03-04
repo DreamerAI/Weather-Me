@@ -43,5 +43,13 @@
     .indicator__value {
         font-size: $font-size-Regular;
         color: var(#{--font-primary-default});
+        overflow-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: $mobile-width) {
+    .this__day__info {
+        width: 92%;
+        margin: auto;
     }
 }

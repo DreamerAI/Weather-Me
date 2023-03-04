@@ -38,6 +38,10 @@
     color: var(#{--font-primary-default});
 }
 
+.select__label {
+    color: var(#{--font-primary-default});
+}
+
 .select {
     margin-left: 12px;
 }
@@ -45,13 +49,5 @@
 @media screen and (max-width: $mobile-width) {
     .header {
         flex-direction: column;
-    }
-
-    .title {
-        font-size: 3rem;
-    }
-
-    .select {
-        width: 100%;
     }
 }
