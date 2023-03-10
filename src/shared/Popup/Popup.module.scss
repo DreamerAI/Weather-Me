@@ -72,3 +72,11 @@
         color: var(#{--font-primary-default});
     }
 }
+
+@media screen and (max-width: $mobile-width) {
+    .popup {
+        flex-direction: column;
+        width: 95%;
+        gap: 15px 0;
+    }
+}

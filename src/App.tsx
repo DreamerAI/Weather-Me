@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className='global__container'>
-      {/* <Popup /> */}
+      {/* <Popup />  */}
       <div className="container">
         <Header />
         <Routes>

@@ -25,6 +25,9 @@ const initialState: currentWeather = {
         },
         name: 'Загрузка...',
         timezone: 0,
+        weather: [
+            { icon: '014n' }
+        ]
     },
     isLoading: false,
     response: {

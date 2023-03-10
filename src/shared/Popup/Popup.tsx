@@ -20,17 +20,17 @@ const Popup = ({ }: Props) => {
         {
             icon_id: 'pressure',
             name: 'Давление',
-            value: '765 мм ртутного столба - нормальное',
+            value: '765 мм ртутного столба',
         },
         {
             icon_id: 'rainfall',
-            name: 'Осадки',
+            name: 'Влажность',
             value: 'Без осадков',
         },
         {
             icon_id: 'wind',
             name: 'Ветер',
-            value: '3 м/с юго-запад - легкий ветер',
+            value: '3 м/с юго-запад',
         },
     ];
 

@@ -13,7 +13,7 @@
     flex-flow: row wrap;
     width: 100%;
     padding: 20px 0;
-
+    gap: 10px 15px;
     background: var(#{--body-background-default});
     border-radius: 0 0 $border-radiusBig $border-radiusBig;
 }
@@ -52,10 +52,11 @@
         .day {
             font-size: $font-size-RegularH3;
             padding: 0;
-            color: var(#{--font-primary-default});
+            color: var(#{--font-accent-default});
         }
 
         .day__info {
+            text-align: center;
             padding: 0;
             font-size: $font-size-Regular;
             color: var(#{--font-secondary-default});
@@ -83,6 +84,10 @@
         .day__temp_night {
             font-size: $font-size-RegularH3;
             color: var(#{--font-secondary-default});
+        }
+
+        span {
+            font-size: 1rem;
         }
     }
 }

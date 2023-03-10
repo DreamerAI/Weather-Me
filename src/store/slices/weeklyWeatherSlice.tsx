@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Weather } from '../types/types';
+import { WeeklyForecast } from '../types/types';
 import { AxiosResponse } from 'axios'
 
-type weeklyWeather = {
-    weather: Weather,
+
+type WeeklyForecastState = {
+    forecast: WeeklyForecast | null,
     isLoading: boolean,
     response: Response;
 }
@@ -13,12 +14,8 @@ type Response = {
     message: string,
 }
 
-const initialState: weeklyWeather = {
-    weather: {
-        main: {
-            temp: 0,
-        }
-    },
+const initialState: WeeklyForecastState = {
+    forecast: null,
     isLoading: false,
     response: {
         status: 0,
@@ -27,29 +24,29 @@ const initialState: weeklyWeather = {
 }
 
 
-export const currentWeatherSlice = createSlice({
-    name: 'current_weather',
+export const weeklyWeatherSlice = createSlice({
+    name: 'weekly_weather',
     initialState,
     reducers: {
-        fetchCurrentWeather(state) {
+        fetchWeeklyWeather(state) {
             state.isLoading = true;
         },
-        fetchCurrentWeatherSuccess(state, action: PayloadAction<AxiosResponse<Weather>>) {
-            state.weather = action.payload.data
+        fetchWeeklyWeatherSuccess(state, action: PayloadAction<AxiosResponse<WeeklyForecast>>) {
+            state.forecast = action.payload.data;
             state.isLoading = false;
             state.response = {
                 status: action.payload.status,
-                message: action.payload.statusText
-            }
+                message: action.payload.statusText,
+            };
         },
-        fetchCurrentWeatherError(state, action: PayloadAction<AxiosResponse<Weather>>) {
+        fetchWeeklyWeatherError(state, action: PayloadAction<AxiosResponse<WeeklyForecast>>) {
             state.isLoading = false;
             state.response = {
                 status: action.payload.status,
-                message: action.payload.statusText
-            }
-        }
-    }
-})
+                message: action.payload.statusText,
+            };
+        },
+    },
+});
 
-export default currentWeatherSlice.reducer;
+export default weeklyWeatherSlice.reducer;

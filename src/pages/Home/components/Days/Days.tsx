@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import { WeeklyForecast, WeeklyForecastItem } from '../../../../store/types/types';
 import Card from './Card';
 
 import s from './Days.module.scss'
 import Tabs from './Tabs';
 
-type Props = {}
+type ForecastProps = {
+    forecast: WeeklyForecast | null;
+}
 
 
 export interface Day {
@@ -16,7 +19,9 @@ export interface Day {
     info: string;
 }
 
-const Days = (props: Props) => {
+const Days = ({ forecast }: ForecastProps) => {
+
+    console.log(forecast);
 
     const days: Day[] = [
         {
@@ -81,9 +86,10 @@ const Days = (props: Props) => {
         <div className={s.days__container}>
             <Tabs />
             <div className={s.days}>
-                {days.map((day: Day, index) => (
-                    <Card day={day} key={day.day_name} />
-                ))}
+                {forecast?.list
+                    .map((day: WeeklyForecastItem, index) => (
+                        <Card day={day} key={index} />
+                    ))}
             </div>
         </div>
     )

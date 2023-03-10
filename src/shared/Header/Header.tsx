@@ -27,6 +27,10 @@ export const Header = (props: Props) => {
 
 
     const colourStyles = {
+        menuList: (styles: any) => ({
+            ...styles,
+            backgroundColor: theme.theme === Theme.DARK ? '#172331' : 'rgb(119, 176, 255, 0.2)',
+        }),
         control: (styles: any) => ({
             ...styles,
             backgroundColor: theme.theme === Theme.DARK ? '#172331' : 'rgb(119, 176, 255, 0.2)',
