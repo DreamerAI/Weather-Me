@@ -13,8 +13,6 @@ type Props = {
 
 const Card = ({ day }: Props) => {
 
-    console.log(day.weather[0].icon);
-
     let maxTemperature = Math.ceil(day.main.temp_max)
     let minTemperature = Math.ceil(day.main.temp_min)
     let weekday = getWeekday(day.dt).toUpperCase()

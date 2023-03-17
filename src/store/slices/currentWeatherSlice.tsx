@@ -33,7 +33,7 @@ const initialState: currentWeather = {
     response: {
         status: 0,
         message: '',
-    }
+    },
 }
 
 
@@ -46,8 +46,6 @@ export const currentWeatherSlice = createSlice({
         },
         fetchCurrentWeatherSuccess(state, action: PayloadAction<AxiosResponse<Weather>>) {
             state.weather = action.payload.data
-            console.log(action.payload.data);
-
             state.isLoading = false;
             state.response = {
                 status: action.payload.status,

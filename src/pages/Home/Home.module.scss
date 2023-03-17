@@ -9,6 +9,12 @@
     justify-content: space-between;
 }
 
+.home__toast_modal {
+    font-size: $font-size-Regular;
+    --toastify-color-dark: #{$dark-background-accent};
+    --toastify-color-light: #{$light-background};
+}
+
 @media screen and (max-width: $mobile-width) {
     .wrapper {
         flex-direction: column;

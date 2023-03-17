@@ -1,55 +1,41 @@
 import React, { useState } from 'react'
-import Select from 'react-select'
 import { useTheme } from '../../hooks/useTheme'
 
 import { GlobalSvgSelector } from '../../assets/icons/global/GlobalSvgSelector'
 
 import s from './Header.module.scss'
 import { Theme } from '../../context/ThemeContext'
-import { getSelectTheme } from '../../helpers/getSelectTheme'
+import { showToastReminder } from '../../utils/getToastMessage'
 
-type Props = {}
+
+export type Props = {
+    selectCity: string;
+    setSelectCity: React.Dispatch<React.SetStateAction<string>>;
+}
 
 export const Header = (props: Props) => {
 
     const theme = useTheme();
     const [width, setWidth] = useState(window.innerWidth);
+    const [inputValue, setInputValue] = useState<string>('');
+
 
     window.addEventListener('resize', () => setWidth(window.innerWidth));
 
 
-    const options = [
-        { value: 'city-1', label: 'Москва' },
-        { value: 'city-2', label: 'Санкт-Петербург' },
-        { value: 'city-3', label: 'Новгород' }
-    ]
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
+    };
 
+    const handleButtonClick = () => {
+        if (/^[A-Za-zА-Яа-я\s-]+$/.test(inputValue)) {
+            props.setSelectCity(inputValue)
+        }
+        else {
+            showToastReminder('Неправильно введен город')
+        }
 
-
-    const colourStyles = {
-        menuList: (styles: any) => ({
-            ...styles,
-            backgroundColor: theme.theme === Theme.DARK ? '#172331' : 'rgb(119, 176, 255, 0.2)',
-        }),
-        control: (styles: any) => ({
-            ...styles,
-            backgroundColor: theme.theme === Theme.DARK ? '#172331' : 'rgb(119, 176, 255, 0.2)',
-            width: width <= 640 ? '70vw' : '194px',
-            height: '39px',
-            border: 'none',
-            borderRadius: '10px',
-            zIndex: 100,
-        }),
-        singleValue: (styles: any) => ({
-            ...styles,
-            color: theme.theme === Theme.DARK ? '#77B0FF' : '#333333'
-        }),
-        option: (styles: any, state: any) => ({
-            ...styles,
-            backgroundColor: getSelectTheme(state, theme.theme),
-            color: theme.theme === Theme.DARK ? '#77B0FF' : '#333333',
-        })
-    }
+    };
 
     function changeTheme() {
         theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT)
@@ -63,9 +49,10 @@ export const Header = (props: Props) => {
                 <div className={s.title}>Weather ME</div>
             </div>
             {width <= 640 ? <p className={s.select__label}> Выберите город</p> : null}
-            <div className={s.wrapper}>
+            <div className={s.wrapperInput}>
                 <div className={s.theme__icon} onClick={changeTheme}><GlobalSvgSelector id='change-theme' theme={theme.theme} /></div>
-                <Select defaultValue={options[0]} className={s.select} options={options} styles={colourStyles} />
+                <input type="text" className={s.input} value={inputValue} onChange={handleInputChange} />
+                <button className={s.button} onClick={handleButtonClick}> &#8594; </button>
             </div>
         </header>
     )

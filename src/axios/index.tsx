@@ -7,6 +7,6 @@ const api = axios.create({
 api.interceptors.request.use(config => {
     config.url = config.url + '&units=metric' + '&lang=ru' + '&appid=' + import.meta.env.VITE_API_KEY
     return config;
-})
+});
 
 export default api;

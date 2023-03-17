@@ -1,5 +1,4 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { serialize } from "v8";
 import currentWeatherSliceReducer from "./slices/currentWeatherSlice";
 import weeklyWeatherSliceReducer from "./slices/weeklyWeatherSlice";
 

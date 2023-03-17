@@ -1,3 +1,5 @@
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios'
 import React from 'react'
 import { GetWeatherIcon } from '../../../../assets/icons/global/GlobalSvgSelector'
 import { getLocalTime } from '../../../../helpers/getLocalTime'
@@ -12,9 +14,6 @@ const ThisDay = ({ weather }: WeatherProps) => {
 
     let localTime = getLocalTime(weather.timezone)
     const temperature = Math.ceil(weather.main.temp);
-
-    console.log(weather);
-
 
     return (
         <div className={s.this__day}>

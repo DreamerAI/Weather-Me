@@ -3,9 +3,7 @@ import { weeklyWeatherSlice } from "../slices/weeklyWeatherSlice";
 import { AppDispatch } from "../store";
 
 export const fetchWeeklyWeather =
-    (payload: string, cnt: number) => async (dispatch: AppDispatch) => {
-        console.log(payload);
-
+    (payload: string) => async (dispatch: AppDispatch) => {
         try {
             dispatch(weeklyWeatherSlice.actions.fetchWeeklyWeather())
             const res = await ForecastService.getForecast(payload);

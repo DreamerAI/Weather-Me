@@ -7,13 +7,15 @@ import Popup from './shared/Popup/Popup'
 
 function App() {
 
+  const [selectCity, setSelectCity] = useState<string>('Москва')
+
   return (
     <div className='global__container'>
       {/* <Popup />  */}
       <div className="container">
-        <Header />
+        <Header selectCity={selectCity} setSelectCity={setSelectCity} />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home selectCity={selectCity} />} />
           <Route path='/month-statistics' element={<MonthStatistics />} />
         </Routes>
       </div>
