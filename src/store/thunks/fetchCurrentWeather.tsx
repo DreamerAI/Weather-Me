@@ -1,4 +1,3 @@
-import { toast, ToastOptions } from "react-toastify";
 import { WeatherService } from "../../services/weatherService";
 import { showToastSuccess, showToastError } from "../../utils/getToastMessage";
 import { currentWeatherSlice } from "../slices/currentWeatherSlice";

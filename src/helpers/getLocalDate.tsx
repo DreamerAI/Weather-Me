@@ -12,6 +12,7 @@ export function getLocalDate(dateNumber: any) {
 
 export function getWeekday(dateNumber: any) {
     const dtFormat = new Intl.DateTimeFormat('ru-RU', {
+        timeZone: 'UTC',
         weekday: 'short'
     });
 

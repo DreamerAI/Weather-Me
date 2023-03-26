@@ -23,7 +23,7 @@ const ThisDay = ({ weather }: WeatherProps) => {
             </div>
             <div className={s.this__day__today}>Сегодня</div>
             <div className={s.this__day__date}>
-                <div className={s.this__day__time}>Время: <span>{localTime}</span></div>
+                <div className={s.this__day__time}>Местное время: <span>{localTime}</span></div>
                 <div className={s.this__day__city}>Город: <span>{weather.name}</span></div>
             </div>
         </div>

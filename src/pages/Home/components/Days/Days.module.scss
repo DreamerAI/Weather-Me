@@ -1,6 +1,8 @@
 @import "../../../../styles/variables.scss";
 
 .days__container {
+    display: flex;
+    flex-direction: column;
     background: var(#{--body-background-default});
     border-radius: $border-radiusBig;
     margin-top: 20px;
@@ -9,11 +11,11 @@
 
 .days {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-flow: row wrap;
     width: 100%;
     padding: 20px 0;
-    gap: 10px 15px;
+    gap: 15px;
     background: var(#{--body-background-default});
     border-radius: 0 0 $border-radiusBig $border-radiusBig;
 }
@@ -92,32 +94,25 @@
     }
 }
 
-// TABS Styles
-
-.tabs {
+.days__loadmore {
     display: flex;
-    justify-content: space-between;
-
-    .tabs__wrapper {
-        display: flex;
-        gap: 20px;
-    }
+    align-items: center;
+    margin: 0 auto;
 }
 
-.tab {
+.button {
     background: var(#{--body-background-default});
     box-shadow: var(#{--box-shadow-default});
     border-radius: $border-radiusSmall;
-
+    border: none;
     font-size: $font-size-RegularH3;
-    padding: 8px 10px;
+    padding: 8px 50px;
     cursor: pointer;
-}
 
-.tab {
     color: var(#{--font-accent-default});
 
     &:active {
+        transform: translateY(2px);
         color: #fff;
         background: var(#{--font-accent-default});
     }
@@ -125,6 +120,7 @@
     &:hover {
         color: #fff;
         background: var(#{--font-accent-default});
+        box-shadow: var(#{--box-shadowIcon-default});
     }
 }
 

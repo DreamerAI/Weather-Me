@@ -3,7 +3,6 @@ import { WeeklyForecast, WeeklyForecastItem } from '../../../../store/types/type
 import Card from './Card';
 
 import s from './Days.module.scss'
-import Tabs from './Tabs';
 
 type ForecastProps = {
     forecast: WeeklyForecast | null;
@@ -13,15 +12,28 @@ type ForecastProps = {
 
 const Days = ({ forecast }: ForecastProps) => {
 
+    const [visibleItems, setVisibleItems] = useState(7);
+
+    console.log(forecast);
+
+    const handleLoadMore = () => {
+        setVisibleItems(prev => prev + 7);
+    };
+
     return (
         <div className={s.days__container}>
-            <Tabs />
             <div className={s.days}>
-                {forecast?.list
+                {forecast?.list.slice(0, visibleItems)
                     .map((day: WeeklyForecastItem, index) => (
                         <Card day={day} key={index} />
                     ))}
             </div>
+            {forecast?.list.length ? visibleItems < forecast?.list.length && (
+                <div className={s.days__loadmore}>
+                    <button className={s.button} onClick={handleLoadMore}>Еще</button>
+                </div>
+            ) : null}
+
         </div>
     )
 }
