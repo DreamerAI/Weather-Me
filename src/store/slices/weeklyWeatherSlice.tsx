@@ -4,7 +4,7 @@ import { AxiosResponse } from 'axios'
 
 
 type WeeklyForecastState = {
-    forecast: WeeklyForwecast | null,
+    forecast: WeeklyForecast | null,
     isLoading: boolean,
     response: Response;
 }
