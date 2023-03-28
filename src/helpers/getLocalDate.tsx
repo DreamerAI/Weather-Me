@@ -18,3 +18,12 @@ export function getWeekday(dateNumber: any) {
 
     return dtFormat.format(new Date(dateNumber * 1e3));
 }
+
+export function getWeekdayLong(dateNumber: any) {
+    const dtFormat = new Intl.DateTimeFormat('ru-RU', {
+        timeZone: 'UTC',
+        weekday: 'long'
+    });
+
+    return dtFormat.format(new Date(dateNumber * 1e3));
+}

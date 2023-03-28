@@ -14,8 +14,6 @@ const Days = ({ forecast }: ForecastProps) => {
 
     const [visibleItems, setVisibleItems] = useState(7);
 
-    console.log(forecast);
-
     const handleLoadMore = () => {
         setVisibleItems(prev => prev + 7);
     };
