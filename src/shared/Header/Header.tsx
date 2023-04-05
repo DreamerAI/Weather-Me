@@ -62,10 +62,10 @@ export const Header = (props: Props) => {
                 <div className={s.logo} ><GlobalSvgSelector id='header-logo' /></div>
                 <div className={s.title}>Weather ME</div>
             </div>
-            {width <= 640 ? <p className={s.select__label}> Выберите город</p> : null}
+            {width <= 640 ? <label className={s.select__label} htmlFor='input-city'>Выберите город</label> : null}
             <div className={s.wrapperInput}>
                 <div className={s.theme__icon} onClick={changeTheme}><GlobalSvgSelector id='change-theme' theme={theme.theme} /></div>
-                <input type="text" className={s.input} value={inputValue} onChange={handleInputChange} onKeyDown={handleInputKeyDown} />
+                <input type="text" className={s.input} value={inputValue} onChange={handleInputChange} onKeyDown={handleInputKeyDown} id='input-city' />
                 <button className={s.button} onClick={handleButtonClick} > &#8594; </button>
             </div>
         </header>
