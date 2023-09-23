@@ -72,7 +72,6 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-
     margin-top: 15px;
 
     .info_degree {
@@ -130,7 +129,12 @@
     }
 
     .days {
-        justify-content: space-around;
+        align-items: center;
         gap: 12px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0px 20px;
     }
 }

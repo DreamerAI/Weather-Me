@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { WeeklyForecast, WeeklyForecastItem } from '../../../../store/types/types';
 import Card from './Card';
 

@@ -33,7 +33,7 @@ const Card = ({ day }: Props) => {
 
 
     return (
-        <div className={s.card__container} >
+        <>
             {isPopupOpen && <Popup handleClose={handleClose} day={day} />}
             <div className={s.card} onClick={handleOpen}>
 
@@ -53,7 +53,7 @@ const Card = ({ day }: Props) => {
                 </div>
 
             </div>
-        </div>
+        </>
     )
 }
 

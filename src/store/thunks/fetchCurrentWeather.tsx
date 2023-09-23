@@ -20,6 +20,4 @@ export const fetchCurrentWeather =
             console.log(error);
 
         }
-
-
     }
