@@ -6,6 +6,7 @@ import { Item } from '../../pages/Home/components/ThisDayInfo/ThisDayInfo';
 import ThisDayItem from '../../pages/Home/components/ThisDayInfo/ThisDayItem';
 import { WeeklyForecastItem } from '../../store/types/types';
 import s from './Popup.module.scss'
+import { useTranslation } from 'react-i18next';
 
 type Props = {
     day: WeeklyForecastItem,
@@ -14,29 +15,31 @@ type Props = {
 
 const Popup = ({ day, handleClose }: Props) => {
 
+    const { t, i18n } = useTranslation();
+
     const temperature = Math.round(day.main.temp_max)
     const feelTemperaturee = Math.round(day.main.feels_like)
-    let localDate = getWeekdayLong(day.dt)
+    let localDate = getWeekdayLong(day.dt, i18n.language)
 
     const items = [{
         icon_id: 'temp',
-        name: 'Температура',
-        value: `${temperature}° - ощущается как ${feelTemperaturee}°`,
+        name: `${t("temperatue")}`,
+        value: `${temperature}° - ${t("temperatueDesc")} ${feelTemperaturee}°`,
 
     }, {
         icon_id: 'pressure',
-        name: 'Давление ',
-        value: `${day.main.pressure} мм ртутного столба`,
+        name: `${t("pressure")}`,
+        value: `${day.main.pressure} ${t("pressureDesc")}`,
 
     }, {
         icon_id: 'rainfall',
-        name: 'Влажность',
-        value: `составляет ${day.main.humidity} %`,
+        name: `${t("humidity")}`,
+        value: `${t("humidityDesc")} ${day.main.humidity} %`,
 
     }, {
         icon_id: 'wind',
-        name: 'Ветер',
-        value: `${day.wind.speed} м/с юго-запад`,
+        name: `${t("wind")}`,
+        value: `${day.wind.speed} ${t("windDesc")}`,
 
     },
     ]

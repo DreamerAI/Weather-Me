@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Home } from './pages/Home/Home'
 import { Header } from './shared/Header/Header'
 
+import "./i18n";
+
 function App() {
 
   const [selectCity, setSelectCity] = useState<string>('Москва')

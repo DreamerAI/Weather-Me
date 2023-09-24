@@ -1,0 +1,22 @@
+{
+
+    "today": "Today",
+    "localTime": "Local Time",
+    "chooseCity": "Choose city",
+    "city": "City",
+
+    "temperatue": "Temperature",
+    "pressure": "Pressure",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    
+    "temperatueDesc": "feels like",
+    "pressureDesc": "mm of mercury",
+    "humidityDesc": "is",
+    "windDesc": "m/s southwest",
+
+    "success": "Success",
+    "failure": "Failure",
+
+    "more": "More"
+}

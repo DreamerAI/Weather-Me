@@ -6,6 +6,7 @@ import { WeeklyForecastItem } from '../../../../store/types/types'
 
 
 import s from './Days.module.scss'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
     day: WeeklyForecastItem
@@ -14,21 +15,20 @@ type Props = {
 
 const Card = ({ day }: Props) => {
 
-
-
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const { t, i18n } = useTranslation();
 
-    let maxTemperature = Math.ceil(day.main.temp_max)
-    let minTemperature = Math.ceil(day.main.temp_min)
-    let weekday = getWeekday(day.dt).toUpperCase()
-    let localdate = getLocalDate(day.dt)
+    let maxTemperature = Math.ceil(day.main.temp_max);
+    let minTemperature = Math.ceil(day.main.temp_min);
+    let weekday = getWeekday(day.dt, i18n.language).toUpperCase();
+    let localdate = getLocalDate(day.dt, i18n.language);
 
     function handleOpen() {
         setIsPopupOpen(true);
     }
     function handleClose(event: React.MouseEvent<HTMLDivElement>) {
         setIsPopupOpen(false);
-        event.stopPropagation()
+        event.stopPropagation();
     }
 
 

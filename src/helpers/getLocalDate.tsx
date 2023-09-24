@@ -1,29 +1,29 @@
-export function getLocalDate(dateNumber: any) {
-    const dtFormat = new Intl.DateTimeFormat('ru-RU', {
+function formatDate(dateNumber: any, options: Intl.DateTimeFormatOptions, language: string) {
+    const dtFormat = new Intl.DateTimeFormat(language, {
         timeZone: 'UTC',
+        ...options
+    });
+
+    return dtFormat.format(new Date(dateNumber * 1e3));
+}
+
+export function getLocalDate(dateNumber: any, language: string) {
+    return formatDate(dateNumber, {
         month: 'long',
         day: 'numeric',
         hour: 'numeric',
         minute: 'numeric'
-    });
-
-    return dtFormat.format(new Date(dateNumber * 1e3));
+    }, language);
 }
 
-export function getWeekday(dateNumber: any) {
-    const dtFormat = new Intl.DateTimeFormat('ru-RU', {
-        timeZone: 'UTC',
+export function getWeekday(dateNumber: any, language: string) {
+    return formatDate(dateNumber, {
         weekday: 'short'
-    });
-
-    return dtFormat.format(new Date(dateNumber * 1e3));
+    }, language);
 }
 
-export function getWeekdayLong(dateNumber: any) {
-    const dtFormat = new Intl.DateTimeFormat('ru-RU', {
-        timeZone: 'UTC',
+export function getWeekdayLong(dateNumber: any, language: string) {
+    return formatDate(dateNumber, {
         weekday: 'long'
-    });
-
-    return dtFormat.format(new Date(dateNumber * 1e3));
+    }, language);
 }

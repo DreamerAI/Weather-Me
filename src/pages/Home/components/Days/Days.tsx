@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import { WeeklyForecast, WeeklyForecastItem } from '../../../../store/types/types';
 import Card from './Card';
 
@@ -7,7 +7,6 @@ import s from './Days.module.scss'
 type ForecastProps = {
     forecast: WeeklyForecast | null;
 }
-
 
 
 const Days = ({ forecast }: ForecastProps) => {

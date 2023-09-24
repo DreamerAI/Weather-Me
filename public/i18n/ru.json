@@ -1,0 +1,21 @@
+{
+    "today": "Сегодня",
+    "localTime": "Местное время",
+    "chooseCity": "Выберите город",
+    "city": "Город",
+
+    "temperatue": "Температура",
+    "pressure": "Давление",
+    "humidity": "Влажность",
+    "wind": "Ветер",
+
+    "temperatueDesc": "ощущается как",
+    "pressureDesc": "мм ртутного столба",
+    "humidityDesc": "составляет",
+    "windDesc": "м/с юго-запад",
+
+    "success": "Успешно",
+    "failure": "Провал",
+
+    "more": "Еще"
+}

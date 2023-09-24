@@ -1,4 +1,4 @@
-import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Weather } from '../../../../store/types/types'
 import s from './ThisDayInfo.module.scss'
 import ThisDayItem from './ThisDayItem'
@@ -15,28 +15,30 @@ export interface Item {
 
 const ThisDayInfo = ({ weatherInfo }: weatherInfoProps) => {
 
+    const { t } = useTranslation();
+
     const temperature = Math.round(weatherInfo.main.temp)
     const feelTemperaturee = Math.round(weatherInfo.main.feels_like)
 
     const items = [{
         icon_id: 'temp',
-        name: 'Температура',
-        value: `${temperature}° - ощущается как ${feelTemperaturee}°`,
+        name: `${t("temperatue")}`,
+        value: `${temperature}° - ${t("temperatueDesc")} ${feelTemperaturee}°`,
 
     }, {
         icon_id: 'pressure',
-        name: 'Давление ',
-        value: `${weatherInfo.main.pressure} мм ртутного столба`,
+        name: `${t("pressure")}`,
+        value: `${weatherInfo.main.pressure} ${t("pressureDesc")}`,
 
     }, {
         icon_id: 'rainfall',
-        name: 'Влажность',
-        value: `составляет ${weatherInfo.main.humidity} %`,
+        name: `${t("humidity")}`,
+        value: `${t("humidityDesc")} ${weatherInfo.main.humidity} %`,
 
     }, {
         icon_id: 'wind',
-        name: 'Ветер',
-        value: `${weatherInfo.wind.speed} м/с юго-запад`,
+        name: `${t("wind")}`,
+        value: `${weatherInfo.wind.speed} ${t("windDesc")}`,
 
     },
     ]

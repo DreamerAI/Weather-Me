@@ -57,13 +57,21 @@
     }
 
     .item {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        place-items: start;
         display: flex;
-        gap: 16px;
-        text-align: center;
+        gap: 20px;
 
         .indicator__icon {
             display: none;
+        }
+
+        .indicator__name {
+            font-size: 16px;
+            color: var(#{--font-accent-default});
+
+            font-weight: 500;
         }
     }
 }
