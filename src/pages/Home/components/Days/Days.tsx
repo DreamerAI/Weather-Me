@@ -3,6 +3,7 @@ import { WeeklyForecast, WeeklyForecastItem } from '../../../../store/types/type
 import Card from './Card';
 
 import s from './Days.module.scss'
+import { useTranslation } from 'react-i18next';
 
 type ForecastProps = {
     forecast: WeeklyForecast | null;
@@ -11,6 +12,7 @@ type ForecastProps = {
 
 const Days = ({ forecast }: ForecastProps) => {
 
+    const { t } = useTranslation();
     const [visibleItems, setVisibleItems] = useState(7);
 
     const handleLoadMore = () => {
@@ -27,7 +29,7 @@ const Days = ({ forecast }: ForecastProps) => {
             </div>
             {forecast?.list.length ? visibleItems < forecast?.list.length && (
                 <div className={s.days__loadmore}>
-                    <button className={s.button} onClick={handleLoadMore}>Еще</button>
+                    <button className={s.button} onClick={handleLoadMore}>{t('more')}</button>
                 </div>
             ) : null}
 
